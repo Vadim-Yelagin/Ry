@@ -1,0 +1,839 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0232E24B225D0CD30004B89C /* Ry.h in Headers */ = {isa = PBXBuildFile; fileRef = 02AECE5C225C3F7B009272D7 /* Ry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0232E24D225D0CD30004B89C /* Bag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE7C225C3FA2009272D7 /* Bag.swift */; };
+		0232E24E225D0CD30004B89C /* Signal+CombineLatest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE76225C3FA1009272D7 /* Signal+CombineLatest.swift */; };
+		0232E24F225D0CD30004B89C /* ReadOnlyProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECEB7225CF71F009272D7 /* ReadOnlyProperty.swift */; };
+		0232E250225D0CD30004B89C /* Signal+Dispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE7A225C3FA1009272D7 /* Signal+Dispatch.swift */; };
+		0232E251225D0CD30004B89C /* DisposePool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE7B225C3FA2009272D7 /* DisposePool.swift */; };
+		0232E252225D0CD30004B89C /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE78225C3FA1009272D7 /* Signal.swift */; };
+		0232E253225D0CD30004B89C /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE74225C3FA1009272D7 /* Property.swift */; };
+		0232E254225D0CD30004B89C /* ReadOnlyProperty+CombineLatest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECEBA225CF7DF009272D7 /* ReadOnlyProperty+CombineLatest.swift */; };
+		0232E255225D0CD30004B89C /* SignalPipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE77225C3FA1009272D7 /* SignalPipe.swift */; };
+		0232E256225D0CD30004B89C /* UnfairAtomic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE75225C3FA1009272D7 /* UnfairAtomic.swift */; };
+		0232E257225D0CD30004B89C /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE79225C3FA1009272D7 /* Observer.swift */; };
+		0232E258225D0CD30004B89C /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE73225C3FA1009272D7 /* Disposable.swift */; };
+		0232E262225D0D2D0004B89C /* Ry.h in Headers */ = {isa = PBXBuildFile; fileRef = 02AECE5C225C3F7B009272D7 /* Ry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0232E264225D0D2D0004B89C /* Bag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE7C225C3FA2009272D7 /* Bag.swift */; };
+		0232E265225D0D2D0004B89C /* Signal+CombineLatest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE76225C3FA1009272D7 /* Signal+CombineLatest.swift */; };
+		0232E266225D0D2D0004B89C /* ReadOnlyProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECEB7225CF71F009272D7 /* ReadOnlyProperty.swift */; };
+		0232E267225D0D2D0004B89C /* Signal+Dispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE7A225C3FA1009272D7 /* Signal+Dispatch.swift */; };
+		0232E268225D0D2D0004B89C /* DisposePool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE7B225C3FA2009272D7 /* DisposePool.swift */; };
+		0232E269225D0D2D0004B89C /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE78225C3FA1009272D7 /* Signal.swift */; };
+		0232E26A225D0D2D0004B89C /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE74225C3FA1009272D7 /* Property.swift */; };
+		0232E26B225D0D2D0004B89C /* ReadOnlyProperty+CombineLatest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECEBA225CF7DF009272D7 /* ReadOnlyProperty+CombineLatest.swift */; };
+		0232E26C225D0D2D0004B89C /* SignalPipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE77225C3FA1009272D7 /* SignalPipe.swift */; };
+		0232E26D225D0D2D0004B89C /* UnfairAtomic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE75225C3FA1009272D7 /* UnfairAtomic.swift */; };
+		0232E26E225D0D2D0004B89C /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE79225C3FA1009272D7 /* Observer.swift */; };
+		0232E26F225D0D2D0004B89C /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE73225C3FA1009272D7 /* Disposable.swift */; };
+		02AECE6A225C3F7B009272D7 /* Ry.h in Headers */ = {isa = PBXBuildFile; fileRef = 02AECE5C225C3F7B009272D7 /* Ry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02AECE7D225C3FA2009272D7 /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE73225C3FA1009272D7 /* Disposable.swift */; };
+		02AECE7E225C3FA2009272D7 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE74225C3FA1009272D7 /* Property.swift */; };
+		02AECE7F225C3FA2009272D7 /* UnfairAtomic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE75225C3FA1009272D7 /* UnfairAtomic.swift */; };
+		02AECE80225C3FA2009272D7 /* Signal+CombineLatest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE76225C3FA1009272D7 /* Signal+CombineLatest.swift */; };
+		02AECE81225C3FA2009272D7 /* SignalPipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE77225C3FA1009272D7 /* SignalPipe.swift */; };
+		02AECE82225C3FA2009272D7 /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE78225C3FA1009272D7 /* Signal.swift */; };
+		02AECE83225C3FA2009272D7 /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE79225C3FA1009272D7 /* Observer.swift */; };
+		02AECE84225C3FA2009272D7 /* Signal+Dispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE7A225C3FA1009272D7 /* Signal+Dispatch.swift */; };
+		02AECE85225C3FA2009272D7 /* DisposePool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE7B225C3FA2009272D7 /* DisposePool.swift */; };
+		02AECE86225C3FA2009272D7 /* Bag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE7C225C3FA2009272D7 /* Bag.swift */; };
+		02AECE89225C441D009272D7 /* Ry.h in Headers */ = {isa = PBXBuildFile; fileRef = 02AECE5C225C3F7B009272D7 /* Ry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02AECE8B225C441D009272D7 /* Bag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE7C225C3FA2009272D7 /* Bag.swift */; };
+		02AECE8C225C441D009272D7 /* Signal+CombineLatest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE76225C3FA1009272D7 /* Signal+CombineLatest.swift */; };
+		02AECE8D225C441D009272D7 /* Signal+Dispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE7A225C3FA1009272D7 /* Signal+Dispatch.swift */; };
+		02AECE8E225C441D009272D7 /* DisposePool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE7B225C3FA2009272D7 /* DisposePool.swift */; };
+		02AECE8F225C441D009272D7 /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE78225C3FA1009272D7 /* Signal.swift */; };
+		02AECE90225C441D009272D7 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE74225C3FA1009272D7 /* Property.swift */; };
+		02AECE91225C441D009272D7 /* SignalPipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE77225C3FA1009272D7 /* SignalPipe.swift */; };
+		02AECE92225C441D009272D7 /* UnfairAtomic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE75225C3FA1009272D7 /* UnfairAtomic.swift */; };
+		02AECE93225C441D009272D7 /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE79225C3FA1009272D7 /* Observer.swift */; };
+		02AECE94225C441D009272D7 /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE73225C3FA1009272D7 /* Disposable.swift */; };
+		02AECEA3225C468A009272D7 /* DisposableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECEA2225C468A009272D7 /* DisposableTests.swift */; };
+		02AECEA5225C468A009272D7 /* Ry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02AECE9A225C441D009272D7 /* Ry.framework */; };
+		02AECEAC225C5D60009272D7 /* ClosureTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECEAB225C5D60009272D7 /* ClosureTracker.swift */; };
+		02AECEAE225C6011009272D7 /* DeinitTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECEAD225C6011009272D7 /* DeinitTracker.swift */; };
+		02AECEB0225C633F009272D7 /* DisposePoolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECEAF225C633F009272D7 /* DisposePoolTests.swift */; };
+		02AECEB2225C66F3009272D7 /* ObserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECEB1225C66F3009272D7 /* ObserverTests.swift */; };
+		02AECEB4225C6D99009272D7 /* SignalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECEB3225C6D99009272D7 /* SignalTests.swift */; };
+		02AECEB6225CEF2C009272D7 /* SignalCombineLatestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECEB5225CEF2C009272D7 /* SignalCombineLatestTests.swift */; };
+		02AECEB8225CF71F009272D7 /* ReadOnlyProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECEB7225CF71F009272D7 /* ReadOnlyProperty.swift */; };
+		02AECEB9225CF71F009272D7 /* ReadOnlyProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECEB7225CF71F009272D7 /* ReadOnlyProperty.swift */; };
+		02AECEBB225CF7DF009272D7 /* ReadOnlyProperty+CombineLatest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECEBA225CF7DF009272D7 /* ReadOnlyProperty+CombineLatest.swift */; };
+		02AECEBC225CF7DF009272D7 /* ReadOnlyProperty+CombineLatest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECEBA225CF7DF009272D7 /* ReadOnlyProperty+CombineLatest.swift */; };
+		02AECEBE225CFF70009272D7 /* PropertyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECEBD225CFF70009272D7 /* PropertyTests.swift */; };
+		02AECEC0225D078E009272D7 /* PropertyCombineLatestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECEBF225D078E009272D7 /* PropertyCombineLatestTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		02AECEA6225C468A009272D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02AECE50225C3F7B009272D7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 02AECE87225C441D009272D7;
+			remoteInfo = "Ry-macOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0232E25E225D0CD30004B89C /* Ry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Ry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0232E275225D0D2D0004B89C /* Ry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Ry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		02AECE59225C3F7B009272D7 /* Ry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Ry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		02AECE5C225C3F7B009272D7 /* Ry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Ry.h; sourceTree = "<group>"; };
+		02AECE5D225C3F7B009272D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02AECE73225C3FA1009272D7 /* Disposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
+		02AECE74225C3FA1009272D7 /* Property.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
+		02AECE75225C3FA1009272D7 /* UnfairAtomic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnfairAtomic.swift; sourceTree = "<group>"; };
+		02AECE76225C3FA1009272D7 /* Signal+CombineLatest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Signal+CombineLatest.swift"; sourceTree = "<group>"; };
+		02AECE77225C3FA1009272D7 /* SignalPipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalPipe.swift; sourceTree = "<group>"; };
+		02AECE78225C3FA1009272D7 /* Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Signal.swift; sourceTree = "<group>"; };
+		02AECE79225C3FA1009272D7 /* Observer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
+		02AECE7A225C3FA1009272D7 /* Signal+Dispatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Signal+Dispatch.swift"; sourceTree = "<group>"; };
+		02AECE7B225C3FA2009272D7 /* DisposePool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisposePool.swift; sourceTree = "<group>"; };
+		02AECE7C225C3FA2009272D7 /* Bag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bag.swift; sourceTree = "<group>"; };
+		02AECE9A225C441D009272D7 /* Ry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Ry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		02AECEA0225C468A009272D7 /* RyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		02AECEA2225C468A009272D7 /* DisposableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisposableTests.swift; sourceTree = "<group>"; };
+		02AECEA4225C468A009272D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02AECEAB225C5D60009272D7 /* ClosureTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureTracker.swift; sourceTree = "<group>"; };
+		02AECEAD225C6011009272D7 /* DeinitTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeinitTracker.swift; sourceTree = "<group>"; };
+		02AECEAF225C633F009272D7 /* DisposePoolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisposePoolTests.swift; sourceTree = "<group>"; };
+		02AECEB1225C66F3009272D7 /* ObserverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObserverTests.swift; sourceTree = "<group>"; };
+		02AECEB3225C6D99009272D7 /* SignalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalTests.swift; sourceTree = "<group>"; };
+		02AECEB5225CEF2C009272D7 /* SignalCombineLatestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalCombineLatestTests.swift; sourceTree = "<group>"; };
+		02AECEB7225CF71F009272D7 /* ReadOnlyProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadOnlyProperty.swift; sourceTree = "<group>"; };
+		02AECEBA225CF7DF009272D7 /* ReadOnlyProperty+CombineLatest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReadOnlyProperty+CombineLatest.swift"; sourceTree = "<group>"; };
+		02AECEBD225CFF70009272D7 /* PropertyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyTests.swift; sourceTree = "<group>"; };
+		02AECEBF225D078E009272D7 /* PropertyCombineLatestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyCombineLatestTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0232E259225D0CD30004B89C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0232E270225D0D2D0004B89C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02AECE56225C3F7B009272D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02AECE95225C441D009272D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02AECE9D225C468A009272D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02AECEA5225C468A009272D7 /* Ry.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		02AECE4F225C3F7B009272D7 = {
+			isa = PBXGroup;
+			children = (
+				02AECE5B225C3F7B009272D7 /* Source */,
+				02AECEA1225C468A009272D7 /* Tests */,
+				02AECE5A225C3F7B009272D7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		02AECE5A225C3F7B009272D7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				02AECE59225C3F7B009272D7 /* Ry.framework */,
+				02AECE9A225C441D009272D7 /* Ry.framework */,
+				02AECEA0225C468A009272D7 /* RyTests.xctest */,
+				0232E25E225D0CD30004B89C /* Ry.framework */,
+				0232E275225D0D2D0004B89C /* Ry.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		02AECE5B225C3F7B009272D7 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				02AECE7C225C3FA2009272D7 /* Bag.swift */,
+				02AECE73225C3FA1009272D7 /* Disposable.swift */,
+				02AECE7B225C3FA2009272D7 /* DisposePool.swift */,
+				02AECE5D225C3F7B009272D7 /* Info.plist */,
+				02AECE79225C3FA1009272D7 /* Observer.swift */,
+				02AECE74225C3FA1009272D7 /* Property.swift */,
+				02AECEB7225CF71F009272D7 /* ReadOnlyProperty.swift */,
+				02AECEBA225CF7DF009272D7 /* ReadOnlyProperty+CombineLatest.swift */,
+				02AECE5C225C3F7B009272D7 /* Ry.h */,
+				02AECE78225C3FA1009272D7 /* Signal.swift */,
+				02AECE76225C3FA1009272D7 /* Signal+CombineLatest.swift */,
+				02AECE7A225C3FA1009272D7 /* Signal+Dispatch.swift */,
+				02AECE77225C3FA1009272D7 /* SignalPipe.swift */,
+				02AECE75225C3FA1009272D7 /* UnfairAtomic.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		02AECEA1225C468A009272D7 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				02AECEAB225C5D60009272D7 /* ClosureTracker.swift */,
+				02AECEAD225C6011009272D7 /* DeinitTracker.swift */,
+				02AECEA2225C468A009272D7 /* DisposableTests.swift */,
+				02AECEAF225C633F009272D7 /* DisposePoolTests.swift */,
+				02AECEA4225C468A009272D7 /* Info.plist */,
+				02AECEB1225C66F3009272D7 /* ObserverTests.swift */,
+				02AECEBF225D078E009272D7 /* PropertyCombineLatestTests.swift */,
+				02AECEBD225CFF70009272D7 /* PropertyTests.swift */,
+				02AECEB5225CEF2C009272D7 /* SignalCombineLatestTests.swift */,
+				02AECEB3225C6D99009272D7 /* SignalTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		0232E24A225D0CD30004B89C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0232E24B225D0CD30004B89C /* Ry.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0232E261225D0D2D0004B89C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0232E262225D0D2D0004B89C /* Ry.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02AECE54225C3F7B009272D7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02AECE6A225C3F7B009272D7 /* Ry.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02AECE88225C441D009272D7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02AECE89225C441D009272D7 /* Ry.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0232E249225D0CD30004B89C /* Ry-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0232E25B225D0CD30004B89C /* Build configuration list for PBXNativeTarget "Ry-tvOS" */;
+			buildPhases = (
+				0232E24A225D0CD30004B89C /* Headers */,
+				0232E24C225D0CD30004B89C /* Sources */,
+				0232E259225D0CD30004B89C /* Frameworks */,
+				0232E25A225D0CD30004B89C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Ry-tvOS";
+			productName = Ry;
+			productReference = 0232E25E225D0CD30004B89C /* Ry.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		0232E260225D0D2D0004B89C /* Ry-watchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0232E272225D0D2D0004B89C /* Build configuration list for PBXNativeTarget "Ry-watchOS" */;
+			buildPhases = (
+				0232E261225D0D2D0004B89C /* Headers */,
+				0232E263225D0D2D0004B89C /* Sources */,
+				0232E270225D0D2D0004B89C /* Frameworks */,
+				0232E271225D0D2D0004B89C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Ry-watchOS";
+			productName = Ry;
+			productReference = 0232E275225D0D2D0004B89C /* Ry.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		02AECE58225C3F7B009272D7 /* Ry-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 02AECE6D225C3F7B009272D7 /* Build configuration list for PBXNativeTarget "Ry-iOS" */;
+			buildPhases = (
+				02AECE54225C3F7B009272D7 /* Headers */,
+				02AECE55225C3F7B009272D7 /* Sources */,
+				02AECE56225C3F7B009272D7 /* Frameworks */,
+				02AECE57225C3F7B009272D7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Ry-iOS";
+			productName = Ry;
+			productReference = 02AECE59225C3F7B009272D7 /* Ry.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		02AECE87225C441D009272D7 /* Ry-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 02AECE97225C441D009272D7 /* Build configuration list for PBXNativeTarget "Ry-macOS" */;
+			buildPhases = (
+				02AECE88225C441D009272D7 /* Headers */,
+				02AECE8A225C441D009272D7 /* Sources */,
+				02AECE95225C441D009272D7 /* Frameworks */,
+				02AECE96225C441D009272D7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Ry-macOS";
+			productName = Ry;
+			productReference = 02AECE9A225C441D009272D7 /* Ry.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		02AECE9F225C468A009272D7 /* RyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 02AECEA8225C468A009272D7 /* Build configuration list for PBXNativeTarget "RyTests" */;
+			buildPhases = (
+				02AECE9C225C468A009272D7 /* Sources */,
+				02AECE9D225C468A009272D7 /* Frameworks */,
+				02AECE9E225C468A009272D7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				02AECEA7225C468A009272D7 /* PBXTargetDependency */,
+			);
+			name = RyTests;
+			productName = RyTests;
+			productReference = 02AECEA0225C468A009272D7 /* RyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		02AECE50225C3F7B009272D7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Vadim Yelagin";
+				TargetAttributes = {
+					02AECE58225C3F7B009272D7 = {
+						CreatedOnToolsVersion = 10.2;
+						LastSwiftMigration = 1020;
+					};
+					02AECE9F225C468A009272D7 = {
+						CreatedOnToolsVersion = 10.2;
+					};
+				};
+			};
+			buildConfigurationList = 02AECE53225C3F7B009272D7 /* Build configuration list for PBXProject "Ry" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 02AECE4F225C3F7B009272D7;
+			productRefGroup = 02AECE5A225C3F7B009272D7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				02AECE87225C441D009272D7 /* Ry-macOS */,
+				02AECE58225C3F7B009272D7 /* Ry-iOS */,
+				0232E249225D0CD30004B89C /* Ry-tvOS */,
+				0232E260225D0D2D0004B89C /* Ry-watchOS */,
+				02AECE9F225C468A009272D7 /* RyTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0232E25A225D0CD30004B89C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0232E271225D0D2D0004B89C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02AECE57225C3F7B009272D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02AECE96225C441D009272D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02AECE9E225C468A009272D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0232E24C225D0CD30004B89C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0232E24D225D0CD30004B89C /* Bag.swift in Sources */,
+				0232E24E225D0CD30004B89C /* Signal+CombineLatest.swift in Sources */,
+				0232E24F225D0CD30004B89C /* ReadOnlyProperty.swift in Sources */,
+				0232E250225D0CD30004B89C /* Signal+Dispatch.swift in Sources */,
+				0232E251225D0CD30004B89C /* DisposePool.swift in Sources */,
+				0232E252225D0CD30004B89C /* Signal.swift in Sources */,
+				0232E253225D0CD30004B89C /* Property.swift in Sources */,
+				0232E254225D0CD30004B89C /* ReadOnlyProperty+CombineLatest.swift in Sources */,
+				0232E255225D0CD30004B89C /* SignalPipe.swift in Sources */,
+				0232E256225D0CD30004B89C /* UnfairAtomic.swift in Sources */,
+				0232E257225D0CD30004B89C /* Observer.swift in Sources */,
+				0232E258225D0CD30004B89C /* Disposable.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0232E263225D0D2D0004B89C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0232E264225D0D2D0004B89C /* Bag.swift in Sources */,
+				0232E265225D0D2D0004B89C /* Signal+CombineLatest.swift in Sources */,
+				0232E266225D0D2D0004B89C /* ReadOnlyProperty.swift in Sources */,
+				0232E267225D0D2D0004B89C /* Signal+Dispatch.swift in Sources */,
+				0232E268225D0D2D0004B89C /* DisposePool.swift in Sources */,
+				0232E269225D0D2D0004B89C /* Signal.swift in Sources */,
+				0232E26A225D0D2D0004B89C /* Property.swift in Sources */,
+				0232E26B225D0D2D0004B89C /* ReadOnlyProperty+CombineLatest.swift in Sources */,
+				0232E26C225D0D2D0004B89C /* SignalPipe.swift in Sources */,
+				0232E26D225D0D2D0004B89C /* UnfairAtomic.swift in Sources */,
+				0232E26E225D0D2D0004B89C /* Observer.swift in Sources */,
+				0232E26F225D0D2D0004B89C /* Disposable.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02AECE55225C3F7B009272D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02AECE86225C3FA2009272D7 /* Bag.swift in Sources */,
+				02AECE80225C3FA2009272D7 /* Signal+CombineLatest.swift in Sources */,
+				02AECEB8225CF71F009272D7 /* ReadOnlyProperty.swift in Sources */,
+				02AECE84225C3FA2009272D7 /* Signal+Dispatch.swift in Sources */,
+				02AECE85225C3FA2009272D7 /* DisposePool.swift in Sources */,
+				02AECE82225C3FA2009272D7 /* Signal.swift in Sources */,
+				02AECE7E225C3FA2009272D7 /* Property.swift in Sources */,
+				02AECEBB225CF7DF009272D7 /* ReadOnlyProperty+CombineLatest.swift in Sources */,
+				02AECE81225C3FA2009272D7 /* SignalPipe.swift in Sources */,
+				02AECE7F225C3FA2009272D7 /* UnfairAtomic.swift in Sources */,
+				02AECE83225C3FA2009272D7 /* Observer.swift in Sources */,
+				02AECE7D225C3FA2009272D7 /* Disposable.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02AECE8A225C441D009272D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02AECE8B225C441D009272D7 /* Bag.swift in Sources */,
+				02AECE8C225C441D009272D7 /* Signal+CombineLatest.swift in Sources */,
+				02AECEB9225CF71F009272D7 /* ReadOnlyProperty.swift in Sources */,
+				02AECE8D225C441D009272D7 /* Signal+Dispatch.swift in Sources */,
+				02AECE8E225C441D009272D7 /* DisposePool.swift in Sources */,
+				02AECE8F225C441D009272D7 /* Signal.swift in Sources */,
+				02AECE90225C441D009272D7 /* Property.swift in Sources */,
+				02AECEBC225CF7DF009272D7 /* ReadOnlyProperty+CombineLatest.swift in Sources */,
+				02AECE91225C441D009272D7 /* SignalPipe.swift in Sources */,
+				02AECE92225C441D009272D7 /* UnfairAtomic.swift in Sources */,
+				02AECE93225C441D009272D7 /* Observer.swift in Sources */,
+				02AECE94225C441D009272D7 /* Disposable.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02AECE9C225C468A009272D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02AECEAC225C5D60009272D7 /* ClosureTracker.swift in Sources */,
+				02AECEB0225C633F009272D7 /* DisposePoolTests.swift in Sources */,
+				02AECEB2225C66F3009272D7 /* ObserverTests.swift in Sources */,
+				02AECEAE225C6011009272D7 /* DeinitTracker.swift in Sources */,
+				02AECEA3225C468A009272D7 /* DisposableTests.swift in Sources */,
+				02AECEB4225C6D99009272D7 /* SignalTests.swift in Sources */,
+				02AECEBE225CFF70009272D7 /* PropertyTests.swift in Sources */,
+				02AECEC0225D078E009272D7 /* PropertyCombineLatestTests.swift in Sources */,
+				02AECEB6225CEF2C009272D7 /* SignalCombineLatestTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		02AECEA7225C468A009272D7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 02AECE87225C441D009272D7 /* Ry-macOS */;
+			targetProxy = 02AECEA6225C468A009272D7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0232E25C225D0CD30004B89C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				SDKROOT = appletvos;
+			};
+			name = Debug;
+		};
+		0232E25D225D0CD30004B89C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				SDKROOT = appletvos;
+			};
+			name = Release;
+		};
+		0232E273225D0D2D0004B89C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				SDKROOT = watchos;
+			};
+			name = Debug;
+		};
+		0232E274225D0D2D0004B89C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				SDKROOT = watchos;
+			};
+			name = Release;
+		};
+		02AECE6B225C3F7B009272D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 42K69GXVAS;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Source/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = vadim.yelagin.Ry;
+				PRODUCT_NAME = Ry;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		02AECE6C225C3F7B009272D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 42K69GXVAS;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Source/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = vadim.yelagin.Ry;
+				PRODUCT_NAME = Ry;
+				SKIP_INSTALL = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		02AECE6E225C3F7B009272D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		02AECE6F225C3F7B009272D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		02AECE98225C441D009272D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		02AECE99225C441D009272D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		02AECEA9225C468A009272D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = vadim.yelagin.RyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		02AECEAA225C468A009272D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = vadim.yelagin.RyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0232E25B225D0CD30004B89C /* Build configuration list for PBXNativeTarget "Ry-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0232E25C225D0CD30004B89C /* Debug */,
+				0232E25D225D0CD30004B89C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0232E272225D0D2D0004B89C /* Build configuration list for PBXNativeTarget "Ry-watchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0232E273225D0D2D0004B89C /* Debug */,
+				0232E274225D0D2D0004B89C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		02AECE53225C3F7B009272D7 /* Build configuration list for PBXProject "Ry" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02AECE6B225C3F7B009272D7 /* Debug */,
+				02AECE6C225C3F7B009272D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		02AECE6D225C3F7B009272D7 /* Build configuration list for PBXNativeTarget "Ry-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02AECE6E225C3F7B009272D7 /* Debug */,
+				02AECE6F225C3F7B009272D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		02AECE97225C441D009272D7 /* Build configuration list for PBXNativeTarget "Ry-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02AECE98225C441D009272D7 /* Debug */,
+				02AECE99225C441D009272D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		02AECEA8225C468A009272D7 /* Build configuration list for PBXNativeTarget "RyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02AECEA9225C468A009272D7 /* Debug */,
+				02AECEAA225C468A009272D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 02AECE50225C3F7B009272D7 /* Project object */;
+}
