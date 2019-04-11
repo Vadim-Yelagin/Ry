@@ -223,4 +223,13 @@ class SignalTests: XCTestCase {
 
         XCTAssertEqual(tracker.values, [2, 12, 85, 0, 7])
     }
+
+    func test_withPrevious() {
+        let tracker = ClosureTracker<(Int, Int)>()
+        let signal = Signal.values([2, 12, 85, 0, 7]).withPrevious()
+
+        signal.addObserver(tracker.observer).add(to: pool)
+
+        XCTAssertEqual(tracker.values.map { [$0, $1] }, [[2, 12], [12, 85], [85, 0], [0, 7]])
+    }
 }

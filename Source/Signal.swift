@@ -161,6 +161,10 @@ public extension Signal {
     func skipRepeats(_ areEqual: @escaping (T, T) -> Bool) -> Signal {
         return contramap { $0.skipRepeats(areEqual) }
     }
+
+    func withPrevious() -> Signal<(T, T)> {
+        return contramap(Observer.withPrevious)
+    }
 }
 
 public extension Signal where T: Equatable {

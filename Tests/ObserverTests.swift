@@ -116,4 +116,15 @@ class ObserverTests: XCTestCase {
         observer.observe(7)
         XCTAssertEqual(tracker.values, [2, 12, 85, 0, 7])
     }
+
+    func test_withPrevious() {
+        let tracker = ClosureTracker<(Int, Int)>()
+        let observer = Observer.withPrevious(tracker.observer)
+        observer.observe(2)
+        observer.observe(12)
+        observer.observe(85)
+        observer.observe(0)
+        observer.observe(7)
+        XCTAssertEqual(tracker.values.map { [$0, $1] }, [[2, 12], [12, 85], [85, 0], [0, 7]])
+    }
 }

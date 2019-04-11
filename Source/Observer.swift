@@ -53,6 +53,15 @@ public extension Observer {
             }
         }
     }
+
+    static func withPrevious(_ observer: Observer<(T, T)>) -> Observer {
+        let atomic = UnfairAtomic<T?>(nil)
+        return Observer { [observe = observer.observe] t in
+            if let previous = atomic.swap(t) {
+                observe((previous, t))
+            }
+        }
+    }
 }
 
 public extension Observer where T: Equatable {
