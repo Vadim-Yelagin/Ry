@@ -165,6 +165,36 @@ public extension Signal {
     func withPrevious() -> Signal<(T, T)> {
         return contramap(Observer.withPrevious)
     }
+
+    func multicast(pool: DisposePool) -> Signal {
+        let pipe = SignalPipe<T>()
+        addObserver(pipe.send).add(to: pool)
+        return pipe.signal
+    }
+
+    func injectEffect(
+        beforeValue: ((T) -> Void)? = nil,
+        afterValue: ((T) -> Void)? = nil,
+        beforeObserver: ((Observer<T>) -> Void)? = nil,
+        afterObserver: ((Observer<T>) -> Void)? = nil,
+        beforeDispose: VoidClosure? = nil,
+        afterDispose: VoidClosure? = nil) -> Signal
+    {
+        return Signal { [addObserver] observer in
+            beforeObserver?(observer)
+            let injectedObserver = observer.injectEffect(
+                beforeValue: beforeValue,
+                afterValue: afterValue
+            )
+            let disposable = addObserver(injectedObserver)
+            afterObserver?(observer)
+            return Disposable {
+                beforeDispose?()
+                disposable.dispose()
+                afterDispose?()
+            }
+        }
+    }
 }
 
 public extension Signal where T: Equatable {

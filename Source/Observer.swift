@@ -62,6 +62,20 @@ public extension Observer {
             }
         }
     }
+
+    func injectEffect(
+        beforeValue: ((T) -> Void)? = nil,
+        afterValue: ((T) -> Void)? = nil) -> Observer
+    {
+        if beforeValue == nil && afterValue == nil {
+            return self
+        }
+        return Observer { [observe] t in
+            beforeValue?(t)
+            observe(t)
+            afterValue?(t)
+        }
+    }
 }
 
 public extension Observer where T: Equatable {

@@ -127,4 +127,26 @@ class ObserverTests: XCTestCase {
         observer.observe(7)
         XCTAssertEqual(tracker.values.map { [$0, $1] }, [[2, 12], [12, 85], [85, 0], [0, 7]])
     }
+
+    func test_injectEffect_beforeValue() {
+        let tracker = ClosureTracker<Int>()
+        let observer = tracker.observer.injectEffect(beforeValue: { value in
+            tracker.call(-value)
+        })
+        observer.observe(2)
+        observer.observe(12)
+        observer.observe(85)
+        XCTAssertEqual(tracker.values, [-2, 2, -12, 12, -85, 85])
+    }
+
+    func test_injectEffect_afterValue() {
+        let tracker = ClosureTracker<Int>()
+        let observer = tracker.observer.injectEffect(afterValue: { value in
+            tracker.call(-value)
+        })
+        observer.observe(2)
+        observer.observe(12)
+        observer.observe(85)
+        XCTAssertEqual(tracker.values, [2, -2, 12, -12, 85, -85])
+    }
 }

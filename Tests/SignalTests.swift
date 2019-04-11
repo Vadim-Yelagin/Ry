@@ -232,4 +232,97 @@ class SignalTests: XCTestCase {
 
         XCTAssertEqual(tracker.values.map { [$0, $1] }, [[2, 12], [12, 85], [85, 0], [0, 7]])
     }
+
+    func test_multicast() {
+        let tracker = ClosureTracker<Int>()
+        let pipe = SignalPipe<Int>()
+        let multicastPool = DisposePool()
+        let signal = pipe.signal.multicast(pool: multicastPool)
+        signal.addObserver(tracker.observer).add(to: pool)
+
+        pipe.send(2)
+        pipe.send(12)
+        pipe.send(85)
+
+        XCTAssertEqual(tracker.values, [2, 12, 85])
+    }
+
+    func test_multicast_earlyDispose() {
+        let tracker = ClosureTracker<Int>()
+        let pipe = SignalPipe<Int>()
+        let multicastPool = DisposePool()
+        let signal = pipe.signal.multicast(pool: multicastPool)
+        signal.addObserver(tracker.observer).add(to: pool)
+
+        pipe.send(2)
+        pipe.send(12)
+        multicastPool.drain()
+        pipe.send(85)
+
+        XCTAssertEqual(tracker.values, [2, 12])
+    }
+
+    func test_multicast_multipleObservers() {
+        let tracker1 = ClosureTracker<Int>()
+        let tracker2 = ClosureTracker<Int>()
+        let pipe = SignalPipe<Int>()
+        let multicastPool = DisposePool()
+        let signal = pipe.signal.multicast(pool: multicastPool)
+        signal.addObserver(tracker1.observer).add(to: pool)
+        signal.addObserver(tracker2.observer).add(to: pool)
+
+        pipe.send(2)
+        pipe.send(12)
+        pipe.send(85)
+
+        XCTAssertEqual(tracker1.values, [2, 12, 85])
+        XCTAssertEqual(tracker2.values, [2, 12, 85])
+    }
+
+    func test_multicast_originalObservedOnce() {
+        let tracker1 = ClosureTracker<Int>()
+        let tracker2 = ClosureTracker<Int>()
+        let pipe = SignalPipe<Int>()
+        let multicastPool = DisposePool()
+        var values = 0
+        var observers = 0
+        let signal = pipe.signal
+            .injectEffect(beforeValue: { _ in values += 1 }, beforeObserver: { _ in observers += 1 })
+            .multicast(pool: multicastPool)
+        signal.addObserver(tracker1.observer).add(to: pool)
+        signal.addObserver(tracker2.observer).add(to: pool)
+
+        pipe.send(2)
+        pipe.send(12)
+        pipe.send(85)
+
+        XCTAssertEqual(values, 3)
+        XCTAssertEqual(observers, 1)
+    }
+
+    func test_injectEffect() {
+        let tracker = ClosureTracker<String>()
+        let signal = Signal.values(["A", "B"]).injectEffect(
+            beforeValue: { tracker.call("before \($0)") },
+            afterValue: { tracker.call("after \($0)") },
+            beforeObserver: { _ in tracker.call("before observer") },
+            afterObserver: { _ in tracker.call("after observer") },
+            beforeDispose: { tracker.call("before dispose") },
+            afterDispose: { tracker.call("after dispose") }
+        )
+        signal.addObserver(tracker.observer).dispose()
+
+        XCTAssertEqual(tracker.values, [
+            "before observer",
+            "before A",
+            "A",
+            "after A",
+            "before B",
+            "B",
+            "after B",
+            "after observer",
+            "before dispose",
+            "after dispose",
+        ])
+    }
 }
