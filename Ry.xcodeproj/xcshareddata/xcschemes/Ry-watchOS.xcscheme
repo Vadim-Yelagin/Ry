@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0232E260225D0D2D0004B89C"
-               BuildableName = "Ry-watchOS.framework"
+               BuildableName = "Ry.framework"
                BlueprintName = "Ry-watchOS"
                ReferencedContainer = "container:Ry.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0232E260225D0D2D0004B89C"
-            BuildableName = "Ry-watchOS.framework"
+            BuildableName = "Ry.framework"
             BlueprintName = "Ry-watchOS"
             ReferencedContainer = "container:Ry.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0232E260225D0D2D0004B89C"
-            BuildableName = "Ry-watchOS.framework"
+            BuildableName = "Ry.framework"
             BlueprintName = "Ry-watchOS"
             ReferencedContainer = "container:Ry.xcodeproj">
          </BuildableReference>
