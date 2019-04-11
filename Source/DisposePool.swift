@@ -31,7 +31,7 @@ public final class DisposePool {
 }
 
 public extension Disposable {
-    func add(to pool: DisposePool) {
+    func dispose(in pool: DisposePool) {
         pool.add(disposable: self)
     }
 }

@@ -166,9 +166,9 @@ public extension Signal {
         return contramap(Observer.withPrevious)
     }
 
-    func multicast(pool: DisposePool) -> Signal {
+    func multicast(disposeIn pool: DisposePool) -> Signal {
         let pipe = SignalPipe<T>()
-        addObserver(pipe.send).add(to: pool)
+        addObserver(pipe.send).dispose(in: pool)
         return pipe.signal
     }
 

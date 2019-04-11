@@ -10,7 +10,7 @@ class SignalCombineLatestTests: XCTestCase {
         let pipe1 = SignalPipe<Int>()
         let signal = Signal.combineLatest(pipe0.signal, pipe1.signal)
             .map { "\($0)\($1)" }
-        signal.addObserver(tracker.observer).add(to: pool)
+        signal.addObserver(tracker.observer).dispose(in: pool)
 
         pipe0.send("A")
         pipe0.send("B")
@@ -31,7 +31,7 @@ class SignalCombineLatestTests: XCTestCase {
         let pipe2 = SignalPipe<Character>()
         let signal = Signal.combineLatest(pipe0.signal, pipe1.signal, pipe2.signal)
             .map { "\($0)\($1)\($2)" }
-        signal.addObserver(tracker.observer).add(to: pool)
+        signal.addObserver(tracker.observer).dispose(in: pool)
 
         pipe0.send("A")
         pipe0.send("B")
@@ -57,7 +57,7 @@ class SignalCombineLatestTests: XCTestCase {
         let pipe3 = SignalPipe<Decimal>()
         let signal = Signal.combineLatest(pipe0.signal, pipe1.signal, pipe2.signal, pipe3.signal)
             .map { "\($0)\($1)\($2)\($3)" }
-        signal.addObserver(tracker.observer).add(to: pool)
+        signal.addObserver(tracker.observer).dispose(in: pool)
 
         pipe0.send("A")
         pipe1.send(0)
@@ -76,7 +76,7 @@ class SignalCombineLatestTests: XCTestCase {
         let pipe0 = SignalPipe<String>()
         let pipe1 = SignalPipe<String>()
         let signal = Signal.combineLatest([pipe0.signal, pipe1.signal]).map { $0.joined() }
-        signal.addObserver(tracker.observer).add(to: pool)
+        signal.addObserver(tracker.observer).dispose(in: pool)
 
         pipe0.send("A")
         pipe0.send("B")
@@ -95,7 +95,7 @@ class SignalCombineLatestTests: XCTestCase {
         let pipe = SignalPipe<Int>()
         let signal = Signal.combineLatest(pipe.signal, pipe.signal)
             .map { [$0, $1].sorted() }
-        signal.addObserver(tracker.observer).add(to: pool)
+        signal.addObserver(tracker.observer).dispose(in: pool)
 
         pipe.send(1)
         pipe.send(2)

@@ -8,7 +8,7 @@ class SignalTests: XCTestCase {
         let tracker = ClosureTracker<Int>()
         let signal = Signal<Int>.never
 
-        signal.addObserver(tracker.observer).add(to: pool)
+        signal.addObserver(tracker.observer).dispose(in: pool)
 
         XCTAssertEqual(tracker.values, [])
     }
@@ -17,7 +17,7 @@ class SignalTests: XCTestCase {
         let tracker = ClosureTracker<Int>()
         let signal = Signal.value(42)
 
-        signal.addObserver(tracker.observer).add(to: pool)
+        signal.addObserver(tracker.observer).dispose(in: pool)
 
         XCTAssertEqual(tracker.values, [42])
     }
@@ -26,7 +26,7 @@ class SignalTests: XCTestCase {
         let tracker = ClosureTracker<Int>()
         let signal = Signal.values([2, 12, 85])
 
-        signal.addObserver(tracker.observer).add(to: pool)
+        signal.addObserver(tracker.observer).dispose(in: pool)
 
         XCTAssertEqual(tracker.values, [2, 12, 85])
     }
@@ -35,7 +35,7 @@ class SignalTests: XCTestCase {
         let tracker = ClosureTracker<String>()
         let signal = Signal.values([2, 12, 85]).map { "\($0)!" }
 
-        signal.addObserver(tracker.observer).add(to: pool)
+        signal.addObserver(tracker.observer).dispose(in: pool)
 
         XCTAssertEqual(tracker.values, ["2!", "12!", "85!"])
     }
@@ -44,7 +44,7 @@ class SignalTests: XCTestCase {
         let tracker = ClosureTracker<Int>()
         let signal = Signal.values([2, 12, 85, 0, 7]).filter { $0 % 2 == 0 }
 
-        signal.addObserver(tracker.observer).add(to: pool)
+        signal.addObserver(tracker.observer).dispose(in: pool)
 
         XCTAssertEqual(tracker.values, [2, 12, 0])
     }
@@ -53,7 +53,7 @@ class SignalTests: XCTestCase {
         let tracker = ClosureTracker<Int>()
         let signal = Signal.values(["2", "12", "hi", "85", "bye"]).compactMap(Int.init)
 
-        signal.addObserver(tracker.observer).add(to: pool)
+        signal.addObserver(tracker.observer).dispose(in: pool)
 
         XCTAssertEqual(tracker.values, [2, 12, 85])
     }
@@ -62,7 +62,7 @@ class SignalTests: XCTestCase {
         let tracker = ClosureTracker<Int>()
         let signal = Signal.values([2, nil, 12, nil, 85]).compacted()
 
-        signal.addObserver(tracker.observer).add(to: pool)
+        signal.addObserver(tracker.observer).dispose(in: pool)
 
         XCTAssertEqual(tracker.values, [2, 12, 85])
     }
@@ -72,7 +72,7 @@ class SignalTests: XCTestCase {
         let outerPipe = SignalPipe<Int>()
         let innerPipes = [SignalPipe<String>(), SignalPipe<String>()]
         let signal = outerPipe.signal.switchMap { innerPipes[$0].signal }
-        signal.addObserver(tracker.observer).add(to: pool)
+        signal.addObserver(tracker.observer).dispose(in: pool)
 
         innerPipes[0].send("0a")
         innerPipes[1].send("1a")
@@ -101,7 +101,7 @@ class SignalTests: XCTestCase {
         let tracker = ClosureTracker<Int>()
         let outerPipe = SignalPipe<Signal<Int>>()
         let signal = outerPipe.signal.switchAll()
-        signal.addObserver(tracker.observer).add(to: pool)
+        signal.addObserver(tracker.observer).dispose(in: pool)
 
         outerPipe.send(.values([1, 2, 3]))
         outerPipe.send(.never)
@@ -117,7 +117,7 @@ class SignalTests: XCTestCase {
         let outerPipe = SignalPipe<Int>()
         let innerPipes = [SignalPipe<String>(), SignalPipe<String>()]
         let signal = outerPipe.signal.mergeMap { innerPipes[$0].signal }
-        signal.addObserver(tracker.observer).add(to: pool)
+        signal.addObserver(tracker.observer).dispose(in: pool)
 
         innerPipes[0].send("0a")
         innerPipes[1].send("1a")
@@ -151,7 +151,7 @@ class SignalTests: XCTestCase {
             .value(6),
             .values([7, 8, 9])
         )
-        signal.addObserver(tracker.observer).add(to: pool)
+        signal.addObserver(tracker.observer).dispose(in: pool)
 
         XCTAssertEqual(tracker.values, Array(1...9))
     }
@@ -159,7 +159,7 @@ class SignalTests: XCTestCase {
     func test_startWithValue() {
         let tracker = ClosureTracker<Int>()
         let signal = Signal.values([2, 12, 85]).startWith(8)
-        signal.addObserver(tracker.observer).add(to: pool)
+        signal.addObserver(tracker.observer).dispose(in: pool)
 
         XCTAssertEqual(tracker.values, [8, 2, 12, 85])
     }
@@ -169,7 +169,7 @@ class SignalTests: XCTestCase {
         var value = 0
         let signal = Signal.values([2, 12, 85]).startWith { value }
         value = 8
-        signal.addObserver(tracker.observer).add(to: pool)
+        signal.addObserver(tracker.observer).dispose(in: pool)
 
         XCTAssertEqual(tracker.values, [8, 2, 12, 85])
     }
@@ -177,7 +177,7 @@ class SignalTests: XCTestCase {
     func test_testWhile_instant() {
         let tracker = ClosureTracker<Int>()
         let signal = Signal.values([2, 12, 85, 0, 6]).takeWhile { $0 != 0 }
-        signal.addObserver(tracker.observer).add(to: pool)
+        signal.addObserver(tracker.observer).dispose(in: pool)
 
         XCTAssertEqual(tracker.values, [2, 12, 85])
     }
@@ -186,7 +186,7 @@ class SignalTests: XCTestCase {
         let tracker = ClosureTracker<Int>()
         let pipe = SignalPipe<Int>()
         let signal = pipe.signal.takeWhile { $0 != 0 }
-        signal.addObserver(tracker.observer).add(to: pool)
+        signal.addObserver(tracker.observer).dispose(in: pool)
 
         pipe.send(2)
         pipe.send(12)
@@ -202,7 +202,7 @@ class SignalTests: XCTestCase {
         let pipe = SignalPipe<Int>()
         let terminator = SignalPipe<String>()
         let signal = pipe.signal.takeUntil(terminator.signal)
-        signal.addObserver(tracker.observer).add(to: pool)
+        signal.addObserver(tracker.observer).dispose(in: pool)
 
         pipe.send(2)
         pipe.send(12)
@@ -219,7 +219,7 @@ class SignalTests: XCTestCase {
         let tracker = ClosureTracker<Int>()
         let signal = Signal.values([2, 2, 2, 12, 85, 85, 0, 7, 7, 7]).skipRepeats()
 
-        signal.addObserver(tracker.observer).add(to: pool)
+        signal.addObserver(tracker.observer).dispose(in: pool)
 
         XCTAssertEqual(tracker.values, [2, 12, 85, 0, 7])
     }
@@ -228,7 +228,7 @@ class SignalTests: XCTestCase {
         let tracker = ClosureTracker<(Int, Int)>()
         let signal = Signal.values([2, 12, 85, 0, 7]).withPrevious()
 
-        signal.addObserver(tracker.observer).add(to: pool)
+        signal.addObserver(tracker.observer).dispose(in: pool)
 
         XCTAssertEqual(tracker.values.map { [$0, $1] }, [[2, 12], [12, 85], [85, 0], [0, 7]])
     }
@@ -237,8 +237,8 @@ class SignalTests: XCTestCase {
         let tracker = ClosureTracker<Int>()
         let pipe = SignalPipe<Int>()
         let multicastPool = DisposePool()
-        let signal = pipe.signal.multicast(pool: multicastPool)
-        signal.addObserver(tracker.observer).add(to: pool)
+        let signal = pipe.signal.multicast(disposeIn: multicastPool)
+        signal.addObserver(tracker.observer).dispose(in: pool)
 
         pipe.send(2)
         pipe.send(12)
@@ -251,8 +251,8 @@ class SignalTests: XCTestCase {
         let tracker = ClosureTracker<Int>()
         let pipe = SignalPipe<Int>()
         let multicastPool = DisposePool()
-        let signal = pipe.signal.multicast(pool: multicastPool)
-        signal.addObserver(tracker.observer).add(to: pool)
+        let signal = pipe.signal.multicast(disposeIn: multicastPool)
+        signal.addObserver(tracker.observer).dispose(in: pool)
 
         pipe.send(2)
         pipe.send(12)
@@ -267,9 +267,9 @@ class SignalTests: XCTestCase {
         let tracker2 = ClosureTracker<Int>()
         let pipe = SignalPipe<Int>()
         let multicastPool = DisposePool()
-        let signal = pipe.signal.multicast(pool: multicastPool)
-        signal.addObserver(tracker1.observer).add(to: pool)
-        signal.addObserver(tracker2.observer).add(to: pool)
+        let signal = pipe.signal.multicast(disposeIn: multicastPool)
+        signal.addObserver(tracker1.observer).dispose(in: pool)
+        signal.addObserver(tracker2.observer).dispose(in: pool)
 
         pipe.send(2)
         pipe.send(12)
@@ -288,9 +288,9 @@ class SignalTests: XCTestCase {
         var observers = 0
         let signal = pipe.signal
             .injectEffect(beforeValue: { _ in values += 1 }, beforeObserver: { _ in observers += 1 })
-            .multicast(pool: multicastPool)
-        signal.addObserver(tracker1.observer).add(to: pool)
-        signal.addObserver(tracker2.observer).add(to: pool)
+            .multicast(disposeIn: multicastPool)
+        signal.addObserver(tracker1.observer).dispose(in: pool)
+        signal.addObserver(tracker2.observer).dispose(in: pool)
 
         pipe.send(2)
         pipe.send(12)

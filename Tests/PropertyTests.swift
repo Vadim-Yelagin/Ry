@@ -13,7 +13,7 @@ class PropertyTests: XCTestCase {
         let tracker = ClosureTracker<Int>()
         let property = Property(initialValue: 42)
 
-        property.values.addObserver(tracker.observer).add(to: pool)
+        property.values.addObserver(tracker.observer).dispose(in: pool)
 
         XCTAssertEqual(tracker.values, [42])
     }
@@ -31,7 +31,7 @@ class PropertyTests: XCTestCase {
         property.value = 15
         property.value = 33
 
-        property.values.addObserver(tracker.observer).add(to: pool)
+        property.values.addObserver(tracker.observer).dispose(in: pool)
         property.value = 67
         property.value = 4
 
@@ -44,7 +44,7 @@ class PropertyTests: XCTestCase {
         property.value = 15
         property.value = 33
 
-        property.newValues.addObserver(tracker.observer).add(to: pool)
+        property.newValues.addObserver(tracker.observer).dispose(in: pool)
         property.value = 67
         property.value = 4
 
@@ -74,8 +74,8 @@ class PropertyTests: XCTestCase {
         let tracker1 = ClosureTracker<Int>()
         let property0 = Property(initialValue: 42)
         let property1 = property0.bimap(to: { $0 + 100 }, from: { $0 - 100 })
-        property0.values.addObserver(tracker0.observer).add(to: pool)
-        property1.values.addObserver(tracker1.observer).add(to: pool)
+        property0.values.addObserver(tracker0.observer).dispose(in: pool)
+        property1.values.addObserver(tracker1.observer).dispose(in: pool)
 
         property0.value = 13
         property1.value = 192
@@ -96,7 +96,7 @@ class PropertyTests: XCTestCase {
         let tracker = ClosureTracker<String>()
         let property0 = Property(initialValue: 42)
         let property1 = property0.readOnly.map { "\($0)?" }
-        property1.values.addObserver(tracker.observer).add(to: pool)
+        property1.values.addObserver(tracker.observer).dispose(in: pool)
 
         property0.value = 13
         property0.value = 92
@@ -130,7 +130,7 @@ class PropertyTests: XCTestCase {
         let property0 = Property(initialValue: 0)
         let properties = [Property(initialValue: "A"), Property(initialValue: "b"), Property(initialValue: "c")]
         let property1 = property0.readOnly.switchMap { properties[$0].readOnly }
-        property1.values.addObserver(tracker.observer).add(to: pool)
+        property1.values.addObserver(tracker.observer).dispose(in: pool)
 
         properties[0].value = "D"
         property0.value = 1

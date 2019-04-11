@@ -10,7 +10,7 @@ class PropertyCombineLatestTests: XCTestCase {
         let property1 = Property(initialValue: 0)
         let combined = ReadOnlyProperty.combineLatest(property0.readOnly, property1.readOnly)
             .map { "\($0)\($1)" }
-        combined.values.addObserver(tracker.observer).add(to: pool)
+        combined.values.addObserver(tracker.observer).dispose(in: pool)
 
         property0.value = "B"
         property1.value = 1
@@ -29,7 +29,7 @@ class PropertyCombineLatestTests: XCTestCase {
         let property2 = Property<Character>(initialValue: "a")
         let combined = ReadOnlyProperty.combineLatest(property0.readOnly, property1.readOnly, property2.readOnly)
             .map { "\($0)\($1)\($2)" }
-        combined.values.addObserver(tracker.observer).add(to: pool)
+        combined.values.addObserver(tracker.observer).dispose(in: pool)
 
         property0.value = "B"
         property1.value = 1
@@ -56,7 +56,7 @@ class PropertyCombineLatestTests: XCTestCase {
             property2.readOnly,
             property3.readOnly
         ).map { "\($0)\($1)\($2)\($3)" }
-        combined.values.addObserver(tracker.observer).add(to: pool)
+        combined.values.addObserver(tracker.observer).dispose(in: pool)
 
         property2.value = "b"
         property3.value = 1
@@ -73,7 +73,7 @@ class PropertyCombineLatestTests: XCTestCase {
         let property0 = Property(initialValue: "A")
         let property1 = Property(initialValue: "0")
         let combined = ReadOnlyProperty.combineLatest([property0.readOnly, property1.readOnly]).map { $0.joined() }
-        combined.values.addObserver(tracker.observer).add(to: pool)
+        combined.values.addObserver(tracker.observer).dispose(in: pool)
 
         property0.value = "B"
         property1.value = "1"
@@ -90,7 +90,7 @@ class PropertyCombineLatestTests: XCTestCase {
         let property = Property(initialValue: 1)
         let combined = ReadOnlyProperty.combineLatest(property.readOnly, property.readOnly)
             .map { $0 * 10 + $1 }
-        combined.values.addObserver(tracker.observer).add(to: pool)
+        combined.values.addObserver(tracker.observer).dispose(in: pool)
 
         property.value = 2
         property.value = 3
