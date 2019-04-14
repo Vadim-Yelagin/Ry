@@ -55,7 +55,7 @@ public extension Signal {
 
 	func switchMap<U>(_ transform: @escaping (T) -> Signal<U>) -> Signal<U> {
 		return Signal<U> { [addObserver] uObserver in
-			let innerDisposable = UnfairAtomic<Disposable?>(nil)
+			let innerDisposable = UnsafeAtomic<Disposable?>(nil)
 			let tObserver = uObserver.mergeContramap(transform) { newDisposable in
 				innerDisposable.swap(newDisposable)?.dispose()
 			}
@@ -73,7 +73,7 @@ public extension Signal {
 
 	func mergeMap<U>(_ transform: @escaping (T) -> Signal<U>) -> Signal<U> {
 		return Signal<U> { [addObserver] uObserver in
-			let innerDisposables = UnfairAtomic([Disposable]())
+			let innerDisposables = UnsafeAtomic([Disposable]())
 			let tObserver = uObserver.mergeContramap(transform) { newDisposable in
 				innerDisposables.access { $0.append(newDisposable) }
 			}
@@ -118,7 +118,7 @@ public extension Signal {
 
 	func takeWhile(_ predicate: @escaping (T) -> Bool) -> Signal {
 		return Signal { [addObserver] observer in
-			let atomic = UnfairAtomic(TakeWhileState())
+			let atomic = UnsafeAtomic(TakeWhileState())
 			let disposable = addObserver(Observer { t in
 				let shouldStop = !predicate(t)
 				let state = atomic.access { state -> TakeWhileState in

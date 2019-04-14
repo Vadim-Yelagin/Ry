@@ -4,14 +4,14 @@ public struct Disposable {
 	// The class is wrapped in an opaque struct to prevent bad practices
 	// like comparing disposables or making a weak reference to a disposable
 	private class Impl {
-		let atomic: UnfairAtomic<VoidClosure?>
+		var dispose: VoidClosure?
 
 		init(_ dispose: @escaping VoidClosure) {
-			atomic = UnfairAtomic(dispose)
+			self.dispose = dispose
 		}
 
 		deinit {
-			assert(atomic.access { $0 == nil }, "Disposable not disposed!")
+			assert(dispose == nil, "Disposable not disposed!")
 		}
 	}
 
@@ -22,11 +22,12 @@ public struct Disposable {
 	}
 
 	public var isDisposed: Bool {
-		return impl.atomic.access { $0 == nil }
+		return impl.dispose == nil
 	}
 
 	public func dispose() {
-		impl.atomic.swap(nil)?()
+		impl.dispose?()
+		impl.dispose = nil
 	}
 }
 

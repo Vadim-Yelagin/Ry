@@ -17,7 +17,7 @@
 		0232E253225D0CD30004B89C /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE74225C3FA1009272D7 /* Property.swift */; };
 		0232E254225D0CD30004B89C /* ReadOnlyProperty+CombineLatest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECEBA225CF7DF009272D7 /* ReadOnlyProperty+CombineLatest.swift */; };
 		0232E255225D0CD30004B89C /* SignalPipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE77225C3FA1009272D7 /* SignalPipe.swift */; };
-		0232E256225D0CD30004B89C /* UnfairAtomic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE75225C3FA1009272D7 /* UnfairAtomic.swift */; };
+		0232E256225D0CD30004B89C /* Atomic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE75225C3FA1009272D7 /* Atomic.swift */; };
 		0232E257225D0CD30004B89C /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE79225C3FA1009272D7 /* Observer.swift */; };
 		0232E258225D0CD30004B89C /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE73225C3FA1009272D7 /* Disposable.swift */; };
 		0232E262225D0D2D0004B89C /* Ry.h in Headers */ = {isa = PBXBuildFile; fileRef = 02AECE5C225C3F7B009272D7 /* Ry.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -30,13 +30,13 @@
 		0232E26A225D0D2D0004B89C /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE74225C3FA1009272D7 /* Property.swift */; };
 		0232E26B225D0D2D0004B89C /* ReadOnlyProperty+CombineLatest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECEBA225CF7DF009272D7 /* ReadOnlyProperty+CombineLatest.swift */; };
 		0232E26C225D0D2D0004B89C /* SignalPipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE77225C3FA1009272D7 /* SignalPipe.swift */; };
-		0232E26D225D0D2D0004B89C /* UnfairAtomic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE75225C3FA1009272D7 /* UnfairAtomic.swift */; };
+		0232E26D225D0D2D0004B89C /* Atomic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE75225C3FA1009272D7 /* Atomic.swift */; };
 		0232E26E225D0D2D0004B89C /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE79225C3FA1009272D7 /* Observer.swift */; };
 		0232E26F225D0D2D0004B89C /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE73225C3FA1009272D7 /* Disposable.swift */; };
 		02AECE6A225C3F7B009272D7 /* Ry.h in Headers */ = {isa = PBXBuildFile; fileRef = 02AECE5C225C3F7B009272D7 /* Ry.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02AECE7D225C3FA2009272D7 /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE73225C3FA1009272D7 /* Disposable.swift */; };
 		02AECE7E225C3FA2009272D7 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE74225C3FA1009272D7 /* Property.swift */; };
-		02AECE7F225C3FA2009272D7 /* UnfairAtomic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE75225C3FA1009272D7 /* UnfairAtomic.swift */; };
+		02AECE7F225C3FA2009272D7 /* Atomic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE75225C3FA1009272D7 /* Atomic.swift */; };
 		02AECE80225C3FA2009272D7 /* Signal+CombineLatest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE76225C3FA1009272D7 /* Signal+CombineLatest.swift */; };
 		02AECE81225C3FA2009272D7 /* SignalPipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE77225C3FA1009272D7 /* SignalPipe.swift */; };
 		02AECE82225C3FA2009272D7 /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE78225C3FA1009272D7 /* Signal.swift */; };
@@ -52,7 +52,7 @@
 		02AECE8F225C441D009272D7 /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE78225C3FA1009272D7 /* Signal.swift */; };
 		02AECE90225C441D009272D7 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE74225C3FA1009272D7 /* Property.swift */; };
 		02AECE91225C441D009272D7 /* SignalPipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE77225C3FA1009272D7 /* SignalPipe.swift */; };
-		02AECE92225C441D009272D7 /* UnfairAtomic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE75225C3FA1009272D7 /* UnfairAtomic.swift */; };
+		02AECE92225C441D009272D7 /* Atomic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE75225C3FA1009272D7 /* Atomic.swift */; };
 		02AECE93225C441D009272D7 /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE79225C3FA1009272D7 /* Observer.swift */; };
 		02AECE94225C441D009272D7 /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECE73225C3FA1009272D7 /* Disposable.swift */; };
 		02AECEA3225C468A009272D7 /* DisposableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AECEA2225C468A009272D7 /* DisposableTests.swift */; };
@@ -89,7 +89,7 @@
 		02AECE5D225C3F7B009272D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02AECE73225C3FA1009272D7 /* Disposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; usesTabs = 1; };
 		02AECE74225C3FA1009272D7 /* Property.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; usesTabs = 1; };
-		02AECE75225C3FA1009272D7 /* UnfairAtomic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnfairAtomic.swift; sourceTree = "<group>"; usesTabs = 1; };
+		02AECE75225C3FA1009272D7 /* Atomic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Atomic.swift; sourceTree = "<group>"; usesTabs = 1; };
 		02AECE76225C3FA1009272D7 /* Signal+CombineLatest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Signal+CombineLatest.swift"; sourceTree = "<group>"; usesTabs = 1; };
 		02AECE77225C3FA1009272D7 /* SignalPipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalPipe.swift; sourceTree = "<group>"; usesTabs = 1; };
 		02AECE78225C3FA1009272D7 /* Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Signal.swift; sourceTree = "<group>"; usesTabs = 1; };
@@ -177,6 +177,7 @@
 		02AECE5B225C3F7B009272D7 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				02AECE75225C3FA1009272D7 /* Atomic.swift */,
 				02AECE7C225C3FA2009272D7 /* Bag.swift */,
 				02AECE73225C3FA1009272D7 /* Disposable.swift */,
 				02AECE7B225C3FA2009272D7 /* DisposePool.swift */,
@@ -190,7 +191,6 @@
 				02AECE76225C3FA1009272D7 /* Signal+CombineLatest.swift */,
 				02AECE7A225C3FA1009272D7 /* Signal+Dispatch.swift */,
 				02AECE77225C3FA1009272D7 /* SignalPipe.swift */,
-				02AECE75225C3FA1009272D7 /* UnfairAtomic.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -432,7 +432,7 @@
 				0232E253225D0CD30004B89C /* Property.swift in Sources */,
 				0232E254225D0CD30004B89C /* ReadOnlyProperty+CombineLatest.swift in Sources */,
 				0232E255225D0CD30004B89C /* SignalPipe.swift in Sources */,
-				0232E256225D0CD30004B89C /* UnfairAtomic.swift in Sources */,
+				0232E256225D0CD30004B89C /* Atomic.swift in Sources */,
 				0232E257225D0CD30004B89C /* Observer.swift in Sources */,
 				0232E258225D0CD30004B89C /* Disposable.swift in Sources */,
 			);
@@ -451,7 +451,7 @@
 				0232E26A225D0D2D0004B89C /* Property.swift in Sources */,
 				0232E26B225D0D2D0004B89C /* ReadOnlyProperty+CombineLatest.swift in Sources */,
 				0232E26C225D0D2D0004B89C /* SignalPipe.swift in Sources */,
-				0232E26D225D0D2D0004B89C /* UnfairAtomic.swift in Sources */,
+				0232E26D225D0D2D0004B89C /* Atomic.swift in Sources */,
 				0232E26E225D0D2D0004B89C /* Observer.swift in Sources */,
 				0232E26F225D0D2D0004B89C /* Disposable.swift in Sources */,
 			);
@@ -470,7 +470,7 @@
 				02AECE7E225C3FA2009272D7 /* Property.swift in Sources */,
 				02AECEBB225CF7DF009272D7 /* ReadOnlyProperty+CombineLatest.swift in Sources */,
 				02AECE81225C3FA2009272D7 /* SignalPipe.swift in Sources */,
-				02AECE7F225C3FA2009272D7 /* UnfairAtomic.swift in Sources */,
+				02AECE7F225C3FA2009272D7 /* Atomic.swift in Sources */,
 				02AECE83225C3FA2009272D7 /* Observer.swift in Sources */,
 				02AECE7D225C3FA2009272D7 /* Disposable.swift in Sources */,
 			);
@@ -489,7 +489,7 @@
 				02AECE90225C441D009272D7 /* Property.swift in Sources */,
 				02AECEBC225CF7DF009272D7 /* ReadOnlyProperty+CombineLatest.swift in Sources */,
 				02AECE91225C441D009272D7 /* SignalPipe.swift in Sources */,
-				02AECE92225C441D009272D7 /* UnfairAtomic.swift in Sources */,
+				02AECE92225C441D009272D7 /* Atomic.swift in Sources */,
 				02AECE93225C441D009272D7 /* Observer.swift in Sources */,
 				02AECE94225C441D009272D7 /* Disposable.swift in Sources */,
 			);

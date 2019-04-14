@@ -8,7 +8,7 @@ public extension Signal {
 					observer.observe(compacted)
 				}
 			}
-			let latest = UnfairAtomic([U?](repeating: nil, count: count))
+			let latest = UnsafeAtomic([U?](repeating: nil, count: count))
 			let disposables = signals.enumerated().map { idx, signal in
 				signal.addObserver { u in
 					sendAll(latest.access {
@@ -28,7 +28,7 @@ public extension Signal {
 					observer.observe((u0, u1))
 				}
 			}
-			let latest = UnfairAtomic<(U0?, U1?)>((nil, nil))
+			let latest = UnsafeAtomic<(U0?, U1?)>((nil, nil))
 			return Disposable(
 				signal0.addObserver { u0 in
 					sendAll(latest.access {
@@ -57,7 +57,7 @@ public extension Signal {
 					observer.observe((u0, u1, u2))
 				}
 			}
-			let latest = UnfairAtomic<(U0?, U1?, U2?)>((nil, nil, nil))
+			let latest = UnsafeAtomic<(U0?, U1?, U2?)>((nil, nil, nil))
 			return Disposable(
 				signal0.addObserver { u0 in
 					sendAll(latest.access {
@@ -93,7 +93,7 @@ public extension Signal {
 					observer.observe((u0, u1, u2, u3))
 				}
 			}
-			let latest = UnfairAtomic<(U0?, U1?, U2?, U3?)>((nil, nil, nil, nil))
+			let latest = UnsafeAtomic<(U0?, U1?, U2?, U3?)>((nil, nil, nil, nil))
 			return Disposable(
 				signal0.addObserver { u0 in
 					sendAll(latest.access {

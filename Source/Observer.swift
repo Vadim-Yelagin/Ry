@@ -47,7 +47,7 @@ public extension Observer {
 	}
 
 	func skipRepeats(_ areEqual: @escaping (T, T) -> Bool) -> Observer {
-		let atomic = UnfairAtomic<T?>(nil)
+		let atomic = UnsafeAtomic<T?>(nil)
 		return Observer { [observe] t in
 			if let previous = atomic.swap(t), areEqual(previous, t) {
 				// skip
@@ -58,7 +58,7 @@ public extension Observer {
 	}
 
 	static func withPrevious(_ observer: Observer<(T, T)>) -> Observer {
-		let atomic = UnfairAtomic<T?>(nil)
+		let atomic = UnsafeAtomic<T?>(nil)
 		return Observer { [observe = observer.observe] t in
 			if let previous = atomic.swap(t) {
 				observe((previous, t))

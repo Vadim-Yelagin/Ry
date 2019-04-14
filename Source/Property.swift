@@ -31,7 +31,7 @@ public extension Property {
 	}
 
 	init(initialValue: T) {
-		let atomic = UnfairAtomic(initialValue)
+		let atomic = UnsafeAtomic(initialValue)
 		self.init(
 			getter: { atomic.value },
 			setter: { atomic.value = $0 }

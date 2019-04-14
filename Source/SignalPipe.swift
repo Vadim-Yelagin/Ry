@@ -16,7 +16,7 @@ public struct SignalPipe<T> {
 
 	public func send(_ t: T) {
 		observers
-			.access { $0.allItems }
+			.accessRead { $0.allItems }
 			.forEach { $0.observe(t) }
 	}
 }

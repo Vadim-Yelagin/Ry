@@ -13,7 +13,7 @@ public extension Signal {
 		on dispatcher: @escaping (DispatchWorkItem) -> Void) -> Signal
 	{
 		return Signal { observer in
-			let atomic = UnfairAtomic<DispatchState?>(nil)
+			let atomic = UnsafeAtomic<DispatchState?>(nil)
 			let item = DispatchWorkItem(qos: qos, flags: flags) {
 				atomic.swap(nil)?.block()
 			}
